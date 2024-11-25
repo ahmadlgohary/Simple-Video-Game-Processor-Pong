@@ -1,6 +1,31 @@
 # Pong in VHDL on Spartan3E FPGA Board
 If you are taking this course please do **NOT** copy my work, rather use it as a reference
 
+# Table of Content
+
+- [Pong in VHDL on Spartan3E FPGA Board](#pong-in-vhdl-on-spartan3e-fpga-board)
+  - [Abstract](#abstract)
+  - [Introduction](#introduction)
+    - [Objective](#objective)
+    - [Approach](#approach)
+    - [Results](#results)
+    - [Theory](#theory)
+  - [System Specifications](#system-specifications)
+  - [](#)
+  - [Device Description](#device-description)
+    - [VGA Specifications](#vga-specifications)
+    - [Block Diagrams](#block-diagrams)
+  - [](#-1)
+  - [Results](#results-1)
+    - [Timing Diagrams](#timing-diagrams)
+    - [Screen Shots](#screen-shots)
+  - [Conclusion](#conclusion)
+  - [Appendix](#appendix)
+    - [Main Code](#main-code)
+    - [Pin Configurations](#pin-configurations)
+    - [Color Logic](#color-logic)
+    - [Game Logic](#game-logic)
+
 ## Abstract
 
 The goal of this project was to have a deeper understanding of the video-output subsystem and the Video Graphic Adaptor (VGA) and interfacing the VGA output with a FPGA board. This design project required understanding the VGA behavior at the to implement a simple video game processor. This was achieved by utilizing VHDL programming on the Xilinx Spartan-3E FPGA board using the Xilinx IDE. Before the development started, the block diagram design was sketched by hand then finalized using a block diagram design software. Then, all the blocks were implemented in a single file defined as one or two behaviors depending on the complexity of the module. The design was heavily based on the block diagram and implementing the block diagram into VHDL code. The required logic for collisions and paddle movement was implemented to achieve a fully functional pong game. The Code includes a lot of optimized code to ensure the best performance possible, while still having the least number of code lines possible. The functionality of the video game alongside analyzing timing simulations and ChipScope logic analyzer diagrams proved the implementation of the hardware and code were successful
