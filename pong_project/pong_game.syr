@@ -1,0 +1,813 @@
+Release 13.4 - xst O.87xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: pong_game.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "pong_game.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "pong_game"
+Output Format                      : NGC
+Target Device                      : xc3s500e-5-fg320
+
+---- Source Options
+Top Module Name                    : pong_game
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/student1/aelgohar/coe758/project_2/pong_project/ipcore_dir/icon.vhd" in Library work.
+Architecture icon_a of Entity icon is up to date.
+Compiling vhdl file "/home/student1/aelgohar/coe758/project_2/pong_project/ipcore_dir/ila.vhd" in Library work.
+Architecture ila_a of Entity ila is up to date.
+Compiling vhdl file "/home/student1/aelgohar/coe758/project_2/pong_project/pong_game.vhd" in Library work.
+WARNING:HDLParsers:1406 - "/home/student1/aelgohar/coe758/project_2/pong_project/pong_game.vhd" Line 237. No sensitivity list and no wait in the process
+Architecture behavioral of Entity pong_game is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <pong_game> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <pong_game> in library <work> (Architecture <behavioral>).
+WARNING:Xst:2211 - "/home/student1/aelgohar/coe758/project_2/pong_project/pong_game.vhd" line 178: Instantiating black box module <icon>.
+WARNING:Xst:2211 - "/home/student1/aelgohar/coe758/project_2/pong_project/pong_game.vhd" line 182: Instantiating black box module <ila>.
+WARNING:Xst:819 - "/home/student1/aelgohar/coe758/project_2/pong_project/pong_game.vhd" line 237: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <horizontal_counter>, <vertical_counter>, <red_colour>, <green_colour>, <blue_colour>
+WARNING:Xst:819 - "/home/student1/aelgohar/coe758/project_2/pong_project/pong_game.vhd" line 390: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <ball_x1>, <ball_x2>, <ball_y1>, <ball_y2>, <score_flag>, <top_left_x1>, <top_left_x2>, <top_left_y1>, <top_left_y2>, <top_horizontal_x1>, <top_horizontal_x2>, <top_horizontal_y1>, <top_horizontal_y2>, <top_right_x1>, <top_right_x2>, <top_right_y1>, <top_right_y2>, <bottom_left_x1>, <bottom_left_x2>, <bottom_left_y1>, <bottom_left_y2>, <bottom_horizontal_x1>, <bottom_horizontal_x2>, <bottom_horizontal_y1>, <bottom_horizontal_y2>, <bottom_right_x1>, <bottom_right_x2>, <bottom_right_y1>, <bottom_right_y2>, <middle_line_x1>, <middle_line_x2>, <middle_line_y1>, <middle_line_y2>, <red_paddle_x1>, <red_paddle_x2>, <red_paddle_y1>, <red_paddle_y2>, <blue_paddle_x1>, <blue_paddle_x2>, <blue_paddle_y1>, <blue_paddle_y2>
+Entity <pong_game> analyzed. Unit <pong_game> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <pong_game>.
+    Related source file is "/home/student1/aelgohar/coe758/project_2/pong_project/pong_game.vhd".
+WARNING:Xst:653 - Signal <trig0> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+WARNING:Xst:653 - Signal <top_right_y2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000010100000.
+WARNING:Xst:653 - Signal <top_right_y1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000001010.
+WARNING:Xst:653 - Signal <top_right_x2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000001001110110.
+WARNING:Xst:653 - Signal <top_right_x1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000001001101100.
+WARNING:Xst:653 - Signal <top_left_y2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000010100000.
+WARNING:Xst:653 - Signal <top_left_y1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000001010.
+WARNING:Xst:653 - Signal <top_left_x2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000010100.
+WARNING:Xst:653 - Signal <top_left_x1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000001010.
+WARNING:Xst:653 - Signal <top_horizontal_y2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000010100.
+WARNING:Xst:653 - Signal <top_horizontal_y1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000001010.
+WARNING:Xst:653 - Signal <top_horizontal_x2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000001001110110.
+WARNING:Xst:653 - Signal <top_horizontal_x1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000001010.
+WARNING:Xst:1780 - Signal <reset_flag> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <red_paddle_x2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000001001100111.
+WARNING:Xst:653 - Signal <red_paddle_x1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000001001011000.
+WARNING:Xst:653 - Signal <red_goal_x> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000001001110001.
+WARNING:Xst:653 - Signal <middle_line_y2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000111000010.
+WARNING:Xst:653 - Signal <middle_line_y1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000011110.
+WARNING:Xst:653 - Signal <middle_line_x2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000101000100.
+WARNING:Xst:653 - Signal <middle_line_x1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000100111100.
+WARNING:Xst:653 - Signal <ila_data<6:4>> is used but never assigned. This sourceless signal will be automatically connected to value 000.
+WARNING:Xst:653 - Signal <bottom_right_y2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000111010110.
+WARNING:Xst:653 - Signal <bottom_right_y1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000100101100.
+WARNING:Xst:653 - Signal <bottom_right_x2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000001001110110.
+WARNING:Xst:653 - Signal <bottom_right_x1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000001001101100.
+WARNING:Xst:653 - Signal <bottom_left_y2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000111010110.
+WARNING:Xst:653 - Signal <bottom_left_y1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000100101100.
+WARNING:Xst:653 - Signal <bottom_left_x2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000010100.
+WARNING:Xst:653 - Signal <bottom_left_x1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000001010.
+WARNING:Xst:653 - Signal <bottom_horizontal_y2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000111010110.
+WARNING:Xst:653 - Signal <bottom_horizontal_y1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000111001100.
+WARNING:Xst:653 - Signal <bottom_horizontal_x2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000001001110110.
+WARNING:Xst:653 - Signal <bottom_horizontal_x1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000001010.
+WARNING:Xst:653 - Signal <blue_paddle_x2> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000101000.
+WARNING:Xst:653 - Signal <blue_paddle_x1> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000011001.
+WARNING:Xst:653 - Signal <blue_goal_x> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000001111.
+WARNING:Xst:646 - Signal <ball_y_direction_int<31>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ball_x_direction_int<31>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:643 - "/home/student1/aelgohar/coe758/project_2/pong_project/pong_game.vhd" line 341: The result of a 32x5-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "/home/student1/aelgohar/coe758/project_2/pong_project/pong_game.vhd" line 347: The result of a 32x5-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 32x5-bit multiplier for signal <$mult0000> created at line 347.
+    Found 10-bit subtractor for signal <$sub0000> created at line 394.
+    Found 9-bit subtractor for signal <$sub0001> created at line 395.
+    Found 32-bit up accumulator for signal <ball_x1>.
+    Found 32-bit subtractor for signal <ball_x1$addsub0000> created at line 341.
+    Found 32x5-bit multiplier for signal <ball_x1$mult0000> created at line 341.
+    Found 32-bit up accumulator for signal <ball_x2>.
+    Found 1-bit register for signal <ball_x_direction>.
+    Found 32-bit adder for signal <ball_x_direction$add0000> created at line 274.
+    Found 32-bit adder for signal <ball_x_direction$add0001> created at line 274.
+    Found 32-bit adder for signal <ball_x_direction$add0002> created at line 274.
+    Found 32-bit subtractor for signal <ball_x_direction$addsub0000> created at line 285.
+    Found 32-bit subtractor for signal <ball_x_direction$addsub0001> created at line 285.
+    Found 32-bit comparator greatequal for signal <ball_x_direction$cmp_ge0000> created at line 285.
+    Found 32-bit comparator greatequal for signal <ball_x_direction$cmp_ge0001> created at line 285.
+    Found 32-bit comparator greatequal for signal <ball_x_direction$cmp_ge0002> created at line 285.
+    Found 32-bit comparator greatequal for signal <ball_x_direction$cmp_ge0003> created at line 285.
+    Found 32-bit comparator greatequal for signal <ball_x_direction$cmp_ge0004> created at line 285.
+    Found 32-bit comparator greatequal for signal <ball_x_direction$cmp_ge0005> created at line 285.
+    Found 32-bit comparator greatequal for signal <ball_x_direction$cmp_ge0006> created at line 274.
+    Found 32-bit comparator greatequal for signal <ball_x_direction$cmp_ge0007> created at line 274.
+    Found 32-bit comparator greatequal for signal <ball_x_direction$cmp_ge0008> created at line 274.
+    Found 32-bit comparator greatequal for signal <ball_x_direction$cmp_ge0009> created at line 274.
+    Found 32-bit comparator greatequal for signal <ball_x_direction$cmp_ge0010> created at line 274.
+    Found 32-bit comparator greatequal for signal <ball_x_direction$cmp_ge0011> created at line 274.
+    Found 32-bit comparator lessequal for signal <ball_x_direction$cmp_le0000> created at line 285.
+    Found 32-bit comparator lessequal for signal <ball_x_direction$cmp_le0001> created at line 285.
+    Found 32-bit comparator lessequal for signal <ball_x_direction$cmp_le0002> created at line 285.
+    Found 32-bit comparator lessequal for signal <ball_x_direction$cmp_le0003> created at line 285.
+    Found 32-bit comparator lessequal for signal <ball_x_direction$cmp_le0004> created at line 274.
+    Found 32-bit comparator lessequal for signal <ball_x_direction$cmp_le0005> created at line 274.
+    Found 32-bit comparator lessequal for signal <ball_x_direction$cmp_le0006> created at line 274.
+    Found 32-bit comparator lessequal for signal <ball_x_direction$cmp_le0007> created at line 274.
+    Found 32-bit comparator lessequal for signal <ball_x_direction$cmp_le0008> created at line 274.
+    Found 32-bit comparator lessequal for signal <ball_x_direction$cmp_le0009> created at line 274.
+    Found 32-bit comparator lessequal for signal <ball_x_direction$cmp_le0010> created at line 274.
+    Found 32-bit comparator lessequal for signal <ball_x_direction$cmp_le0011> created at line 274.
+    Found 32-bit subtractor for signal <ball_x_direction$sub0000> created at line 274.
+    Found 32-bit register for signal <ball_x_direction_int>.
+    Found 32-bit down accumulator for signal <ball_y1>.
+    Found 32-bit down accumulator for signal <ball_y2>.
+    Found 1-bit register for signal <ball_y_direction>.
+    Found 32-bit adder for signal <ball_y_direction$add0000> created at line 302.
+    Found 32-bit subtractor for signal <ball_y_direction$addsub0000> created at line 303.
+    Found 32-bit comparator greatequal for signal <ball_y_direction$cmp_ge0000> created at line 303.
+    Found 32-bit comparator lessequal for signal <ball_y_direction$cmp_le0000> created at line 302.
+    Found 32-bit register for signal <ball_y_direction_int>.
+    Found 32-bit comparator greatequal for signal <ball_y_direction_int$cmp_ge0000> created at line 321.
+    Found 32-bit comparator lessequal for signal <ball_y_direction_int$cmp_le0000> created at line 321.
+    Found 32-bit updown accumulator for signal <blue_paddle_y1>.
+    Found 32-bit comparator greater for signal <blue_paddle_y1$cmp_gt0000> created at line 362.
+    Found 32-bit comparator less for signal <blue_paddle_y1$cmp_lt0000> created at line 366.
+    Found 32-bit updown accumulator for signal <blue_paddle_y2>.
+    Found 32-bit comparator greater for signal <green_colour$cmp_gt0000> created at line 459.
+    Found 32-bit comparator greater for signal <green_colour$cmp_gt0001> created at line 459.
+    Found 32-bit comparator less for signal <green_colour$cmp_lt0000> created at line 459.
+    Found 32-bit comparator less for signal <green_colour$cmp_lt0001> created at line 459.
+    Found 10-bit comparator lessequal for signal <h_sync$cmp_le0000> created at line 233.
+    Found 10-bit up counter for signal <horizontal_counter>.
+    Found 10-bit comparator lessequal for signal <ila_data_3$cmp_le0000> created at line 477.
+    Found 32-bit subtractor for signal <mult0000$addsub0000> created at line 347.
+    Found 1-bit register for signal <pixel_clock>.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0000> created at line 403.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0001> created at line 403.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0002> created at line 415.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0003> created at line 415.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0004> created at line 415.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0005> created at line 415.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0006> created at line 415.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0007> created at line 415.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0008> created at line 415.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0009> created at line 415.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0010> created at line 415.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0011> created at line 415.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0012> created at line 415.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0013> created at line 415.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0014> created at line 441.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0015> created at line 441.
+    Found 6-bit comparator greater for signal <red_colour$cmp_gt0016> created at line 446.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0017> created at line 450.
+    Found 32-bit comparator greater for signal <red_colour$cmp_gt0018> created at line 450.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0000> created at line 403.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0001> created at line 403.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0002> created at line 415.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0003> created at line 415.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0004> created at line 415.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0005> created at line 415.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0006> created at line 415.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0007> created at line 415.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0008> created at line 415.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0009> created at line 415.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0010> created at line 415.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0011> created at line 415.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0012> created at line 415.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0013> created at line 415.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0014> created at line 441.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0015> created at line 441.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0016> created at line 450.
+    Found 32-bit comparator less for signal <red_colour$cmp_lt0017> created at line 450.
+    Found 10-bit comparator greatequal for signal <red_out$cmp_ge0000> created at line 238.
+    Found 10-bit comparator greatequal for signal <red_out$cmp_ge0001> created at line 238.
+    Found 10-bit comparator lessequal for signal <red_out$cmp_le0000> created at line 238.
+    Found 10-bit comparator lessequal for signal <red_out$cmp_le0001> created at line 238.
+    Found 32-bit updown accumulator for signal <red_paddle_y1>.
+    Found 32-bit comparator greater for signal <red_paddle_y1$cmp_gt0000> created at line 375.
+    Found 32-bit comparator less for signal <red_paddle_y1$cmp_lt0000> created at line 379.
+    Found 32-bit updown accumulator for signal <red_paddle_y2>.
+    Found 1-bit register for signal <refresh_clock>.
+    Found 32-bit comparator greatequal for signal <refresh_clock$cmp_ge0000> created at line 256.
+    Found 32-bit up counter for signal <refresh_counter>.
+    Found 1-bit register for signal <score_flag>.
+    Found 32-bit comparator greater for signal <score_flag$cmp_gt0000> created at line 312.
+    Found 32-bit comparator less for signal <score_flag$cmp_lt0000> created at line 312.
+    Found 10-bit up counter for signal <vertical_counter>.
+    Summary:
+	inferred   3 Counter(s).
+	inferred   8 Accumulator(s).
+	inferred  69 D-type flip-flop(s).
+	inferred  12 Adder/Subtractor(s).
+	inferred   2 Multiplier(s).
+	inferred  82 Comparator(s).
+Unit <pong_game> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 2
+ 32x5-bit multiplier                                   : 2
+# Adders/Subtractors                                   : 12
+ 10-bit subtractor                                     : 1
+ 32-bit adder                                          : 4
+ 32-bit subtractor                                     : 6
+ 9-bit subtractor                                      : 1
+# Counters                                             : 3
+ 10-bit up counter                                     : 2
+ 32-bit up counter                                     : 1
+# Accumulators                                         : 8
+ 32-bit down accumulator                               : 2
+ 32-bit up accumulator                                 : 2
+ 32-bit updown accumulator                             : 4
+# Registers                                            : 7
+ 1-bit register                                        : 5
+ 32-bit register                                       : 2
+# Comparators                                          : 82
+ 10-bit comparator greatequal                          : 2
+ 10-bit comparator lessequal                           : 4
+ 32-bit comparator greatequal                          : 15
+ 32-bit comparator greater                             : 23
+ 32-bit comparator less                                : 23
+ 32-bit comparator lessequal                           : 14
+ 6-bit comparator greater                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/icon.ngc>.
+Reading core <ipcore_dir/ila.ngc>.
+Loading core <icon> for timing and area information for instance <sys_icon>.
+Loading core <ila> for timing and area information for instance <sys_ila>.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_1> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_2> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_3> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_4> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_5> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_6> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_7> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_8> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_9> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_10> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_11> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_12> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_13> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_14> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_15> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_16> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_17> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_18> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_19> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_20> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_21> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_22> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_23> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_24> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_25> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_26> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_27> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_28> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_29> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_x_direction_int_30> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_1> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_2> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_3> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_4> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_5> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_6> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_7> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_8> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_9> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_10> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_11> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_12> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_13> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_14> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_15> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_16> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_17> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_18> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_19> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_20> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_21> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_22> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_23> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_24> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_25> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_26> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_27> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_28> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_29> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ball_y_direction_int_30> (without init value) has a constant value of 0 in block <pong_game>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <ball_y_direction_int_31> of sequential type is unconnected in block <pong_game>.
+WARNING:Xst:2677 - Node <ball_x_direction_int_31> of sequential type is unconnected in block <pong_game>.
+WARNING:Xst:2404 -  FFs/Latches <ball_y_direction_int<31:1>> (without init value) have a constant value of 0 in block <pong_game>.
+WARNING:Xst:2404 -  FFs/Latches <ball_x_direction_int<31:1>> (without init value) have a constant value of 0 in block <pong_game>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 2
+ 32x5-bit multiplier                                   : 2
+# Adders/Subtractors                                   : 12
+ 10-bit subtractor                                     : 1
+ 32-bit adder                                          : 4
+ 32-bit subtractor                                     : 6
+ 9-bit subtractor                                      : 1
+# Counters                                             : 3
+ 10-bit up counter                                     : 2
+ 32-bit up counter                                     : 1
+# Accumulators                                         : 8
+ 32-bit down accumulator                               : 2
+ 32-bit up accumulator                                 : 2
+ 32-bit updown accumulator                             : 4
+# Registers                                            : 7
+ Flip-Flops                                            : 7
+# Comparators                                          : 82
+ 10-bit comparator greatequal                          : 2
+ 10-bit comparator lessequal                           : 4
+ 32-bit comparator greatequal                          : 15
+ 32-bit comparator greater                             : 23
+ 32-bit comparator less                                : 23
+ 32-bit comparator lessequal                           : 14
+ 6-bit comparator greater                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <pong_game> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block pong_game, actual ratio is 19.
+FlipFlop pixel_clock has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 316
+ Flip-Flops                                            : 316
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : pong_game.ngr
+Top Level Output File Name         : pong_game
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 32
+
+Cell Usage :
+# BELS                             : 2725
+#      GND                         : 3
+#      INV                         : 96
+#      LUT1                        : 142
+#      LUT2                        : 436
+#      LUT3                        : 89
+#      LUT3_L                      : 1
+#      LUT4                        : 532
+#      LUT4_L                      : 1
+#      MUXCY                       : 917
+#      MUXCY_L                     : 56
+#      MUXF5                       : 43
+#      MUXF6                       : 9
+#      VCC                         : 3
+#      XORCY                       : 397
+# FlipFlops/Latches                : 586
+#      FD                          : 32
+#      FDC                         : 1
+#      FDCE                        : 24
+#      FDE                         : 165
+#      FDP                         : 41
+#      FDPE                        : 18
+#      FDR                         : 195
+#      FDRE                        : 74
+#      FDRS                        : 4
+#      FDS                         : 30
+#      FDSE                        : 1
+#      LDC                         : 1
+# RAMS                             : 2
+#      RAMB16_S1_S36               : 2
+# Shift Registers                  : 87
+#      SRL16                       : 32
+#      SRL16E                      : 1
+#      SRLC16E                     : 54
+# Clock Buffers                    : 4
+#      BUFG                        : 3
+#      BUFGP                       : 1
+# IO Buffers                       : 31
+#      IBUF                        : 4
+#      OBUF                        : 27
+# MULTs                            : 4
+#      MULT18X18SIO                : 4
+# Others                           : 4
+#      BSCAN_SPARTAN3              : 1
+#      TIMESPEC                    : 3
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-5 
+
+ Number of Slices:                      805  out of   4656    17%  
+ Number of Slice Flip Flops:            585  out of   9312     6%  
+ Number of 4 input LUTs:               1384  out of   9312    14%  
+    Number used as logic:              1297
+    Number used as Shift registers:      87
+ Number of IOs:                          32
+ Number of bonded IOBs:                  32  out of    232    13%  
+    IOB Flip Flops:                       1
+ Number of BRAMs:                         2  out of     20    10%  
+ Number of MULT18X18SIOs:                 4  out of     20    20%  
+ Number of GCLKs:                         4  out of     24    16%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+------------------------------------------------------------------------------+-----------------------------------------------------+-------+
+Clock Signal                                                                  | Clock buffer(FF name)                               | Load  |
+------------------------------------------------------------------------------+-----------------------------------------------------+-------+
+sys_icon/U0/U_ICON/I_YES_BSCAN.U_BS/DRCK1                                     | BUFG                                                | 135   |
+sys_icon/U0/iUPDATE_OUT                                                       | NONE(sys_icon/U0/U_ICON/U_iDATA_CMD)                | 1     |
+clock                                                                         | BUFGP                                               | 226   |
+sys_icon/CONTROL0<13>(sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[9].U_LCE:O)| NONE(*)(sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_DIRTY_LDC)| 1     |
+pixel_clock1                                                                  | BUFG                                                | 53    |
+refresh_clock1                                                                | BUFG                                                | 261   |
+------------------------------------------------------------------------------+-----------------------------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+-------+
+Control Signal                                                                                             | Buffer(FF name)                                                                                                      | Load  |
+-----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+-------+
+sys_ila/N0(sys_ila/XST_GND:G)                                                                              | NONE(sys_ila/U0/I_DQ.G_DW[0].U_DQ)                                                                                   | 41    |
+sys_icon/CONTROL0<20>(sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[0].U_HCE:O)                             | NONE(sys_ila/U0/I_YES_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_SRL16.U_GANDX_SRL16/F_TW[0].U_TREG)| 16    |
+sys_icon/U0/U_ICON/U_CMD/iSEL_n(sys_icon/U0/U_ICON/U_CMD/U_SEL_n:O)                                        | NONE(sys_icon/U0/U_ICON/U_CMD/G_TARGET[10].I_NE0.U_TARGET)                                                           | 10    |
+sys_ila/U0/I_YES_D.U_ILA/U_RST/U_ARM_XFER/iCLR(sys_ila/U0/I_YES_D.U_ILA/U_RST/U_ARM_XFER/U_CLEAR:O)        | NONE(sys_ila/U0/I_YES_D.U_ILA/U_RST/U_ARM_XFER/U_DOUT0)                                                              | 4     |
+sys_ila/U0/I_YES_D.U_ILA/U_RST/U_HALT_XFER/iCLR(sys_ila/U0/I_YES_D.U_ILA/U_RST/U_HALT_XFER/U_CLEAR:O)      | NONE(sys_ila/U0/I_YES_D.U_ILA/U_RST/U_HALT_XFER/U_DOUT0)                                                             | 4     |
+sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_DSL1/iCLR(sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_DSL1/U_CLEAR:O)              | NONE(sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_DSL1/U_DOUT0)                                                                 | 4     |
+sys_ila/U0/I_YES_D.U_ILA/iARM(sys_ila/U0/I_YES_D.U_ILA/U_RST/U_ARM_XFER/U_GEN_DELAY[3].U_FD:Q)             | NONE(sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_DIRTY_FDCE)                                                                   | 2     |
+sys_icon/CONTROL0<13>(sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[9].U_LCE:O)                             | NONE(sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_DIRTY_FDPE)                                                                   | 1     |
+sys_icon/U0/U_ICON/iSEL_n(sys_icon/U0/U_ICON/U_iSEL_n:O)                                                   | NONE(sys_icon/U0/U_ICON/U_iDATA_CMD)                                                                                 | 1     |
+sys_ila/U0/I_YES_D.U_ILA/U_STAT/ACTRESET_pulse(sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_RESET_EDGE/I_H2L.U_DOUT:Q)| NONE(sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_RISING)                                                                       | 1     |
+sys_ila/U0/I_YES_D.U_ILA/iRESET<1>(sys_ila/U0/I_YES_D.U_ILA/U_RST/G_RST[1].U_RST:Q)                        | NONE(sys_ila/U0/I_YES_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_OREG.I_YES_OREG.U_OREG)                                | 1     |
+-----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 12.078ns (Maximum Frequency: 82.793MHz)
+   Minimum input arrival time before clock: 5.895ns
+   Maximum output required time after clock: 16.387ns
+   Maximum combinational path delay: No path found
+
+=========================================================================
+Timing constraint: TS_J_CLK = PERIOD TIMEGRP "J_CLK" 30 nS HIGH 15 nS
+  Clock period: 11.202ns (frequency: 89.268MHz)
+  Total number of paths / destination ports: 3344 / 284
+  Number of failed paths / ports: 0 (0.00%) / 0 (0.00%)
+-------------------------------------------------------------------------
+Slack:                  22.991ns
+  Source:               sys_icon/U0/U_ICON/U_TDI_reg (FF)
+  Destination:          sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_TDO (FF)
+  Data Path Delay:      11.202ns (Levels of Logic = 9)
+  Source Clock:         sys_icon/U0/U_ICON/I_YES_BSCAN.U_BS/DRCK1 rising at 0.000ns
+  Destination Clock:    sys_icon/U0/U_ICON/I_YES_BSCAN.U_BS/DRCK1 rising at 30.000ns
+
+  Data Path: sys_icon/U0/U_ICON/U_TDI_reg (FF) to sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_TDO (FF)
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              7   0.514   0.632  U0/U_ICON/U_TDI_reg (CONTROL0<1>)
+     end scope: 'sys_icon'
+     begin scope: 'sys_ila'
+     LUT4:I2->O            1   0.612   0.000  U0/U_XST_CONTROLBUS_WORKAROUND/CONTROL_XST_WORKAROUND_O_cmp_eq0000_wg_lut<7> (U0/U_XST_CONTROLBUS_WORKAROUND/CONTROL_XST_WORKAROUND_O_cmp_eq0000_wg_lut<7>)
+     MUXCY:S->O            1   0.404   0.000  U0/U_XST_CONTROLBUS_WORKAROUND/CONTROL_XST_WORKAROUND_O_cmp_eq0000_wg_cy<7> (U0/U_XST_CONTROLBUS_WORKAROUND/CONTROL_XST_WORKAROUND_O_cmp_eq0000_wg_cy<7>)
+     MUXCY:CI->O           3   0.399   0.603  U0/U_XST_CONTROLBUS_WORKAROUND/CONTROL_XST_WORKAROUND_O_cmp_eq0000_wg_cy<8> (U0/U_XST_CONTROLBUS_WORKAROUND/CONTROL_XST_WORKAROUND_O_cmp_eq0000_wg_cy<8>)
+     LUT3:I0->O            1   0.612   0.000  U0/I_YES_D.U_ILA/U_STAT/U_SMUX/U_CS_MUX/I6.U_MUX64/Mmux_O_15_f5_G (N41)
+     MUXF5:I1->O           1   0.278   0.387  U0/I_YES_D.U_ILA/U_STAT/U_SMUX/U_CS_MUX/I6.U_MUX64/Mmux_O_15_f5 (U0/I_YES_D.U_ILA/U_STAT/U_SMUX/U_CS_MUX/I6.U_MUX64/Mmux_O_15_f5)
+     LUT3_L:I2->LO         1   0.612   0.103  U0/I_YES_D.U_ILA/U_STAT/U_MUX/U_CS_MUX/I1.U_MUX2/O21_SW0 (N38)
+     LUT4:I3->O            1   0.612   0.360  U0/I_YES_D.U_ILA/U_STAT/U_MUX/U_CS_MUX/I1.U_MUX2/O39 (U0/I_YES_D.U_ILA/U_STAT/U_MUX/U_CS_MUX/I1.U_MUX2/O39)
+     LUT4:I3->O            1   0.612   0.000  U0/I_YES_D.U_ILA/U_STAT/U_MUX/U_CS_MUX/I1.U_MUX2/O87 (U0/I_YES_D.U_ILA/U_STAT/TDO_next)
+     FDE:D                     0.268          U0/I_YES_D.U_ILA/U_STAT/U_TDO
+    ----------------------------------------
+    Total                     11.202ns (9.117ns logic, 2.085ns route)
+                                       (81.4% logic, 18.6% route)
+
+=========================================================================
+Timing constraint: TS_U_TO_J = MAXDELAY FROM TIMEGRP "U_CLK" TO TIMEGRP "J_CLK" 15 nS
+  Clock period: 3.016ns (frequency: 331.587MHz)
+  Total number of paths / destination ports: 18 / 18
+  Number of failed paths / ports: 0 (0.00%) / 0 (0.00%)
+-------------------------------------------------------------------------
+Slack:                  11.984ns
+  Source:               sys_icon/U0/U_ICON/U_iDATA_CMD (FF)
+  Destination:          sys_icon/U0/U_ICON/U_SYNC/G_SYNC_WORD[6].I_EQ0.U_FDR (FF)
+  Data Path Delay:      3.016ns (Levels of Logic = 1)
+  Source Clock:         sys_icon/U0/iUPDATE_OUT rising at 0.000ns
+  Destination Clock:    sys_icon/U0/U_ICON/I_YES_BSCAN.U_BS/DRCK1 rising at 15.000ns
+
+  Data Path: sys_icon/U0/U_ICON/U_iDATA_CMD (FF) to sys_icon/U0/U_ICON/U_SYNC/G_SYNC_WORD[6].I_EQ0.U_FDR (FF)
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.514   0.451  U0/U_ICON/U_iDATA_CMD (U0/U_ICON/iDATA_CMD)
+     INV:I->O              8   0.612   0.643  U0/U_ICON/U_SYNC/U_iDATA_CMD_n (U0/U_ICON/U_SYNC/iDATA_CMD_n)
+     FDR:R                     0.795          U0/U_ICON/U_SYNC/G_SYNC_WORD[6].I_EQ0.U_FDR
+    ----------------------------------------
+    Total                      3.016ns (1.921ns logic, 1.095ns route)
+                                       (63.7% logic, 36.3% route)
+
+=========================================================================
+Timing constraint: TS_U_TO_U = MAXDELAY FROM TIMEGRP "U_CLK" TO TIMEGRP "U_CLK" 15 nS
+  Clock period: 2.202ns (frequency: 454.060MHz)
+  Total number of paths / destination ports: 1 / 1
+  Number of failed paths / ports: 0 (0.00%) / 0 (0.00%)
+-------------------------------------------------------------------------
+Slack:                  12.798ns
+  Source:               sys_icon/U0/U_ICON/U_iDATA_CMD (FF)
+  Destination:          sys_icon/U0/U_ICON/U_iDATA_CMD (FF)
+  Data Path Delay:      2.202ns (Levels of Logic = 1)
+  Source Clock:         sys_icon/U0/iUPDATE_OUT rising at 0.000ns
+  Destination Clock:    sys_icon/U0/iUPDATE_OUT rising at 15.000ns
+
+  Data Path: sys_icon/U0/U_ICON/U_iDATA_CMD (FF) to sys_icon/U0/U_ICON/U_iDATA_CMD (FF)
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.514   0.451  U0/U_ICON/U_iDATA_CMD (U0/U_ICON/iDATA_CMD)
+     INV:I->O              1   0.612   0.357  U0/U_ICON/U_iDATA_CMD_n (U0/U_ICON/iDATA_CMD_n)
+     FDC:D                     0.268          U0/U_ICON/U_iDATA_CMD
+    ----------------------------------------
+    Total                      2.202ns (1.394ns logic, 0.808ns route)
+                                       (63.3% logic, 36.7% route)
+
+=========================================================================
+Timing constraint: TS_J_TO_D = FROM TIMEGRP "J_CLK" TO TIMEGRP "D_CLK" TIG;
+  Clock period: 5.445ns (frequency: 183.655MHz)
+  Total number of paths / destination ports: 170 / 85
+  Number of failed paths / ports: 0 (0.00%) / 0 (0.00%)
+-------------------------------------------------------------------------
+Delay:                  5.445ns
+  Source:               sys_ila/U0/I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL/I_SRLT_NE_1.U_SCRST/I_NOLUT6.I_SRL_T2.I_YES_RPM.UF0_CFGLUT4 (FF)
+  Destination:          sys_ila/U0/I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL/U_CAP_ADDRGEN/I_NO_TSEQ.I_SRLT_NE_1.U_SCNT/G[8].U_FDRE (FF)
+  Data Path Delay:      5.445ns (Levels of Logic = 2)
+  Source Clock:         sys_icon/U0/U_ICON/I_YES_BSCAN.U_BS/DRCK1 rising at 0.000ns
+  Destination Clock:    clock rising at 0.000ns
+
+  Data Path: sys_ila/U0/I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL/I_SRLT_NE_1.U_SCRST/I_NOLUT6.I_SRL_T2.I_YES_RPM.UF0_CFGLUT4 (FF) to sys_ila/U0/I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL/U_CAP_ADDRGEN/I_NO_TSEQ.I_SRLT_NE_1.U_SCNT/G[8].U_FDRE (FF)
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     SRLC16E:CLK->Q        1   3.224   0.000  U0/I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL/I_SRLT_NE_1.U_SCRST/I_NOLUT6.I_SRL_T2.I_YES_RPM.UF0_CFGLUT4 (U0/I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL/I_SRLT_NE_1.U_SCRST/iO<0>)
+     MUXF5:I1->O           1   0.278   0.000  U0/I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL/I_SRLT_NE_1.U_SCRST/I_NOLUT6.I_SRL_T2.I_YES_RPM.U0_MUXF5 (U0/I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL/I_SRLT_NE_1.U_SCRST/jO<0>)
+     MUXF6:I1->O           9   0.451   0.697  U0/I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL/I_SRLT_NE_1.U_SCRST/I_NOLUT6.I_SRL_T2.I_YES_RPM.I_NO_OREG.U_MUXF6 (U0/I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL/SCNT_RESET)
+     FDRE:R                    0.795          U0/I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL/U_CAP_ADDRGEN/I_NO_TSEQ.I_SRLT_NE_1.U_SCNT/G[8].U_FDRE
+    ----------------------------------------
+    Total                      5.445ns (4.748ns logic, 0.697ns route)
+                                       (87.2% logic, 12.8% route)
+
+=========================================================================
+Timing constraint: TS_D_TO_J = FROM TIMEGRP "D_CLK" TO TIMEGRP "J_CLK" TIG;
+  Clock period: 6.179ns (frequency: 161.838MHz)
+  Total number of paths / destination ports: 260 / 244
+  Number of failed paths / ports: 0 (0.00%) / 0 (0.00%)
+-------------------------------------------------------------------------
+Delay:                  6.179ns
+  Source:               sys_ila/U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_NO_TB.I_RT1.U_RAM/G_BRAM[0].U_BRAM/ram_rt1_s1_s32_if.ram_rt1_s1_s32_i (RAM)
+  Destination:          sys_icon/U0/U_ICON/U_TDO_reg (FF)
+  Data Path Delay:      6.179ns (Levels of Logic = 5)
+  Source Clock:         sys_icon/U0/U_ICON/I_YES_BSCAN.U_BS/DRCK1 rising at 0.000ns
+  Destination Clock:    sys_icon/U0/U_ICON/I_YES_BSCAN.U_BS/DRCK1 rising at 0.000ns
+
+  Data Path: sys_ila/U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_NO_TB.I_RT1.U_RAM/G_BRAM[0].U_BRAM/ram_rt1_s1_s32_if.ram_rt1_s1_s32_i (RAM) to sys_icon/U0/U_ICON/U_TDO_reg (FF)
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16_S1_S36:CLKA->DOA0    1   2.436   0.426  U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_NO_TB.I_RT1.U_RAM/G_BRAM[0].U_BRAM/ram_rt1_s1_s32_if.ram_rt1_s1_s32_i (U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_NO_TB.I_RT1.U_RAM/localDOA<0>)
+     LUT3:I1->O            1   0.612   0.426  U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_NO_TB.I_RT1.U_RAM/I_MUX.U_RD_DATA/U_CS_MUX/I1.U_MUX2/O1 (U0/I_YES_D.U_ILA/iDATA_DOUT)
+     LUT3:I1->O            1   0.612   0.509  U0/I_YES_D.U_ILA/U_DOUT (CONTROL<3>)
+     end scope: 'sys_ila'
+     begin scope: 'sys_icon'
+     LUT4:I0->O            1   0.612   0.000  U0/U_ICON/U_TDO_MUX/U_CS_MUX/I4.U_MUX16/Mmux_O_4 (U0/U_ICON/U_TDO_MUX/U_CS_MUX/I4.U_MUX16/Mmux_O_4)
+     MUXF5:I0->O           1   0.278   0.000  U0/U_ICON/U_TDO_MUX/U_CS_MUX/I4.U_MUX16/Mmux_O_2_f5 (U0/U_ICON/iTDO_next)
+     FDE:D                     0.268          U0/U_ICON/U_TDO_reg
+    ----------------------------------------
+    Total                      6.179ns (4.818ns logic, 1.361ns route)
+                                       (78.0% logic, 22.0% route)
+
+=========================================================================
+Timing constraint: TS_D2_TO_T2 = FROM TIMEGRP "D2_CLK" TO TIMEGRP "FFS" TIG;
+  Clock period: 5.624ns (frequency: 177.798MHz)
+  Total number of paths / destination ports: 3 / 3
+  Number of failed paths / ports: 0 (0.00%) / 0 (0.00%)
+-------------------------------------------------------------------------
+Delay:                  5.624ns
+  Source:               sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_DIRTY_LDC (LATCH)
+  Destination:          sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_TDO (FF)
+  Data Path Delay:      5.624ns (Levels of Logic = 6)
+  Source Clock:         sys_icon/CONTROL0<13> falling at 0.000ns
+  Destination Clock:    sys_icon/U0/U_ICON/I_YES_BSCAN.U_BS/DRCK1 rising at 0.000ns
+
+  Data Path: sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_DIRTY_LDC (LATCH) to sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_TDO (FF)
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              1   0.588   0.509  U0/I_YES_D.U_ILA/U_STAT/U_DIRTY_LDC (U0/I_YES_D.U_ILA/U_STAT/DIRTY_SEL)
+     LUT3:I0->O            3   0.612   0.481  U0/I_YES_D.U_ILA/U_STAT/DIRTY_dstat1 (U0/I_YES_D.U_ILA/U_STAT/DIRTY_dstat)
+     LUT3:I2->O            1   0.612   0.000  U0/I_YES_D.U_ILA/U_STAT/U_DMUX/U_CS_MUX/I3.U_MUX8/Mmux_O_91_F (N42)
+     MUXF5:I0->O           1   0.278   0.387  U0/I_YES_D.U_ILA/U_STAT/U_DMUX/U_CS_MUX/I3.U_MUX8/Mmux_O_91 (U0/I_YES_D.U_ILA/U_STAT/U_DMUX/U_CS_MUX/I3.U_MUX8/Mmux_O_91)
+     LUT4:I2->O            1   0.612   0.000  U0/I_YES_D.U_ILA/U_STAT/U_DMUX/U_CS_MUX/I3.U_MUX8/Mmux_O_4 (U0/I_YES_D.U_ILA/U_STAT/U_DMUX/U_CS_MUX/I3.U_MUX8/Mmux_O_4)
+     MUXF5:I0->O           1   0.278   0.387  U0/I_YES_D.U_ILA/U_STAT/U_DMUX/U_CS_MUX/I3.U_MUX8/Mmux_O_2_f5 (U0/I_YES_D.U_ILA/U_STAT/TDO_mux_in<0>1)
+     LUT4:I2->O            1   0.612   0.000  U0/I_YES_D.U_ILA/U_STAT/U_MUX/U_CS_MUX/I1.U_MUX2/O87 (U0/I_YES_D.U_ILA/U_STAT/TDO_next)
+     FDE:D                     0.268          U0/I_YES_D.U_ILA/U_STAT/U_TDO
+    ----------------------------------------
+    Total                      5.624ns (3.860ns logic, 1.764ns route)
+                                       (68.6% logic, 31.4% route)
+
+=========================================================================
+Timing constraint: TS_J2_TO_D2 = FROM TIMEGRP "FFS" TO TIMEGRP "D2_CLK" TIG;
+-------------------------------------------------------------------------
+WARNING:Xst:1415 - No path found for this constraint.
+
+=========================================================================
+Timing constraint: TS_J3_TO_D2 = FROM TIMEGRP "FFS" TO TIMEGRP "D2_CLK" TIG;
+-------------------------------------------------------------------------
+WARNING:Xst:1415 - No path found for this constraint.
+
+=========================================================================
+Timing constraint: TS_J4_TO_D2 = FROM TIMEGRP "FFS" TO TIMEGRP "D2_CLK" TIG;
+-------------------------------------------------------------------------
+WARNING:Xst:1415 - No path found for this constraint.
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 11.76 secs
+ 
+--> 
+
+
+Total memory usage is 691624 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  113 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

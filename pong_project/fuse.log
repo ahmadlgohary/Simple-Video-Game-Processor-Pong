@@ -1,0 +1,26 @@
+Running: /CMC/tools/xilinx/13.4/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -o "/home/student1/aelgohar/coe758/project_2/pong_project/pong_test_isim_beh.exe" -prj "/home/student1/aelgohar/coe758/project_2/pong_project/pong_test_beh.prj" "work.pong_test" 
+ISim O.87xd (signature 0x8ddf5b5d)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/student1/aelgohar/coe758/project_2/pong_project/pong_game.vhd" into library work
+WARNING:HDLCompiler:1369 - "/home/student1/aelgohar/coe758/project_2/pong_project/pong_game.vhd" Line 189: Possible infinite loop; process does not have a wait statement
+Parsing VHDL file "/home/student1/aelgohar/coe758/project_2/pong_project/pong_test.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 123276 KB
+Fuse CPU Usage: 1030 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling architecture behavioral of entity pong_game [pong_game_default]
+Compiling architecture behavior of entity pong_test
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 8 VHDL Units
+Built simulation executable /home/student1/aelgohar/coe758/project_2/pong_project/pong_test_isim_beh.exe
+Fuse Memory Usage: 1223548 KB
+Fuse CPU Usage: 1200 ms
+GCC CPU Usage: 270 ms

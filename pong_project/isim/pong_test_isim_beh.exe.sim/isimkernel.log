@@ -1,0 +1,10 @@
+Command line:
+   pong_test_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49483
+
+Mon Nov 18 23:46:39 2024
+
+
+ Elaboration Time: 0.02 sec

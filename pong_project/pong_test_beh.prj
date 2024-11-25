@@ -1,0 +1,2 @@
+vhdl work "pong_game.vhd"
+vhdl work "pong_test.vhd"
